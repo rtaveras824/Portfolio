@@ -1,0 +1,23 @@
+{
+  "name": "reubens-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtaveras824/Portfolio.git"
+  },
+  "author": "Reuben Taveras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rtaveras824/Portfolio/issues"
+  },
+  "homepage": "https://github.com/rtaveras824/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
