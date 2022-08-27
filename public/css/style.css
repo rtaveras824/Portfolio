@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: black;
+}
+
+.container {
+	background-color: #E63946;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+nav {
+	text-align: right;
+	height: 50px;
+}
+
+.menu {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 900;
+	font-size: 32px;
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px -5px 10px;
+}
+
+.menu:hover {
+	background-color: black;
+}
