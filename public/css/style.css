@@ -209,7 +209,7 @@ nav {
 	border-style: solid;
 	border-width: 20px 10px;
 	border-color: white;
-	overflow: auto;
+	/*overflow: auto;*/
 }
 
 #projects h3 {
@@ -360,6 +360,28 @@ nav {
 
 .submit-btn:active {
 	background-color: var(--red);
+}
+
+/* ------------------ FOOTER ---------------------- */
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px;
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.5em;
+	font-weight: 300;
+	color: white;
+}
+
+.bottom-links a {
+	color: white;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+.bottom-link a:visited {
+	color: white;
 }
 
 /* ------------------------------------------------ */
