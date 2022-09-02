@@ -12,14 +12,24 @@
 	scroll-behavior: smooth;
 }
 
+/* Remove chrome default outline of form elements */
+input:focus, textarea:focus, select:focus {
+	outline: none;
+}
+
 body {
 	background-color: black;
 	color: white;
 }
 
+.main-container {
+	width: 100%;
+}
+
 .container {
 	width: 80%;
 	margin: 0 auto;
+	padding-bottom: 20px;
 }
 
 nav {
@@ -57,7 +67,7 @@ nav {
 
 /* ------------ MAIN PAGE ----------------- */
 
-.main-page {
+#main {
 	/* Viewport minus nav minus content margin */
 	height: calc(100vh - 50px - 150px);
 	text-align: right;
@@ -65,14 +75,14 @@ nav {
 	background-color: var(--red);
 }
 
-.main-page i {
+#main i {
 	font-size: 20vw;
 	float: left;
 	margin-left: 100px;
 	margin-top: -20px;
 }
 
-.main-page h1 {
+#main h1 {
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 9em;
 	font-weight: 400;
@@ -93,7 +103,7 @@ nav {
 	font-weight: 900;
 }
 
-.main-page ul {
+#main ul {
 	font-family: 'Roboto Slab', serif;
 	font-size: 1em;
 	font-weight: 300;
@@ -102,7 +112,7 @@ nav {
 
 /* ----------------- ABOUT PAGE ------------------- */
 
-.about-page {
+#about {
 	position: relative;
 	height: 96vh;
 	background-color: var(--blue);
@@ -118,7 +128,7 @@ nav {
 	background-color: var(--darkblue);
 }
 
-.about-page img {
+#about img {
 	-webkit-clip-path: inset(0 50px 50px 0);
 	clip-path: inset(0 10% 0 10%);
 	max-width: 100%;
@@ -193,7 +203,7 @@ nav {
 
 /* ------------------ PROJECTS PAGE ---------------- */
 
-.projects-page {
+#projects {
 	width: 100%;
 	background-color: var(--red);
 	border-style: solid;
@@ -202,7 +212,7 @@ nav {
 	overflow: auto;
 }
 
-.projects-page h3 {
+#projects h3 {
 	font-family: 'Bebas Neue', sans-serif;
 	font-weight: 400;
 	font-size: 6em;
@@ -281,6 +291,75 @@ nav {
 
 .frameworks i:last-child {
 	margin: 20px 0 0 0;
+}
+
+/* ------------ CONTACT PAGE ---------------------- */
+
+#contact {
+	width: 100%;
+	background-color: var(--blue);
+	font-family: 'Bebas Neue', sans-serif;
+	font-weight: inherit;
+	text-align: center;
+	padding: 60px 0;
+}
+
+#contact h3 {
+	font-size: 6em;
+	font-weight: inherit;
+	padding-top: 10px;
+}
+
+#contact form {
+	/*padding-top: 50px;*/
+}
+
+.form-input input, .form-input textarea, .submit-btn {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 2em;
+	color: black;
+	width: 40%;
+	margin-top: 30px;
+	padding: 10px;
+	/*box-sizing: border-box;*/
+	border-radius: 10px;
+	border: 0.5px solid rgba(127, 127, 127, 0.5);
+}
+
+.form-input input, .form-input textarea {
+	background-color: rgba(255, 255, 255, 0.3);
+	box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.form-input input::placeholder, .form-input textarea::placeholder {
+	color: white;
+	opacity: 0.9;
+}
+
+.form-input input:focus, .form-input textarea:focus {
+	border: 2px solid white;
+}
+
+.form-input textarea {
+	height: 200px;
+}
+
+.submit-btn {
+	color: white;
+	background-color: var(--darkblue);
+	border: 2px solid var(--lightwhite);
+	box-sizing: content-box;
+}
+
+.submit-btn:hover {
+	border-color: var(--red);
+	background-color: var(--lightwhite);
+	color: var(--darkblue);
+	transition: 1s;
+}
+
+.submit-btn:active {
+	background-color: var(--red);
 }
 
 /* ------------------------------------------------ */
