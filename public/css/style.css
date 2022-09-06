@@ -424,15 +424,6 @@ footer {
 
 	.menu-window {
 		margin-top: 10px;
-		transform: translate(100%, 0);
-		transition-property: transform;
-		transition-duration: 0.5s;
-		transition-timing-function: ease-out;
-	}
-
-	.responsive {
-		/*display: inline-block;*/
-		transform: translate(0);
 	}
 
 	.link-mobile {
@@ -440,6 +431,32 @@ footer {
 		margin-top: 5px;
 		display: block;
 		background-color: var(--darkblue);
+		transform: translate(100%, 0);
+	}
+
+	#mobile-link-one {
+		transition-property: transform;
+		transition-duration: 0.5s;
+		transition-timing-function: ease-out;
+	}
+
+	#mobile-link-two {
+		transition-property: transform;
+		transition-duration: 0.5s;
+		transition-delay: 0.15s;
+		transition-timing-function: ease-out;
+	}
+
+	#mobile-link-three {
+		transition-property: transform;
+		transition-duration: 0.5s;
+		transition-delay: 0.3s;
+		transition-timing-function: ease-out;
+	}
+
+	.responsive {
+		/*display: inline-block;*/
+		transform: translate(0);
 	}
 
 	#main {

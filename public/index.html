@@ -31,9 +31,9 @@
 					<div class="mobile-links">
 						<div><i class="fas fa-bars"></i></div>
 						<div class="menu-window">
-							<a class="menu link-mobile" href="#about">About</a>
-							<a class="menu link-mobile" href="#projects">Projects</a>
-							<a class="menu link-mobile" href="#contact">Contact</a>
+							<a id="mobile-link-one" class="menu link-mobile" href="#about">About</a>
+							<a id="mobile-link-two" class="menu link-mobile" href="#projects">Projects</a>
+							<a id="mobile-link-three" class="menu link-mobile" href="#contact">Contact</a>
 						</div>
 					</div>
 				</nav>
@@ -146,15 +146,25 @@
 	</div>
 
 	<script>
-		var menu = document.querySelector('.menu-window');
+		var menu = document.querySelectorAll('.link-mobile');
 		var hamburger = document.querySelector('.mobile-links i');
 		hamburger.onclick = function() {
-			if(menu.className === 'menu-window') {
-				menu.className += ' responsive';
-			} else {
-				menu.className = 'menu-window';
-			}
+			menu.forEach((element) => {
+				if(element.className === 'menu link-mobile') {
+					element.className += ' responsive';
+				} else {
+					element.className = 'menu link-mobile';
+				}
+			});
 		}
+
+		menu.forEach((element) => {
+			element.onclick = () => {
+				menu.forEach((link) => {
+					link.className = 'menu link-mobile';
+				});
+			}
+		})
 	</script>
 
 </body>
