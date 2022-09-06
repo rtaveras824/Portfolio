@@ -55,6 +55,9 @@ nav {
 	font-size: 1.9em;
 	color: white;
 	text-decoration: none;
+}
+
+.links .menu {
 	margin: 0 20px;
 	top: 4px;
 	z-index: 2;
@@ -410,21 +413,33 @@ footer {
 
 	.mobile-links {
 		display: inline-block;
-		
-		background-color: var(--darkblue);
+		position: relative; /* To display menu on top */
 	}
 
 	.mobile-links i {
 		font-size: 2em;
 		padding: 20px;
+		background-color: var(--darkblue);
 	}
 
-	.nav-links {
-		display: none;
+	.menu-window {
+		margin-top: 10px;
+		transform: translate(100%, 0);
+		transition-property: transform;
+		transition-duration: 0.5s;
+		transition-timing-function: ease-out;
 	}
 
 	.responsive {
+		/*display: inline-block;*/
+		transform: translate(0);
+	}
+
+	.link-mobile {
+		padding: 10px 10px 10px 40px;
+		margin-top: 5px;
 		display: block;
+		background-color: var(--darkblue);
 	}
 
 	#main {
