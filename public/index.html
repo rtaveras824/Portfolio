@@ -28,11 +28,19 @@
 						<span class="selector"><a class="menu" href="#projects">Projects</a></span>
 						<span class="selector"><a class="menu" href="#contact">Contact</a></span>
 					</div>
+					<div class="mobile-links">
+						<i class="fas fa-bars"></i>
+						<div class="nav-links">
+							<a class="menu" href="#about">About</a>
+							<a class="menu" href="#projects">Projects</a>
+							<a class="menu" href="#contact">Contact</a>
+						</div>
+					</div>
 				</nav>
 			</header>
 			<main>
 				<div id="main">
-					<i class="fas fa-barcode"></i>
+					<!-- <i class="fas fa-barcode"></i> -->
 					<h1>Reuben<br>Taveras</h1>
 					<span class="back-block"><h3>ASPIRING...</h3></span>
 					<ul>
@@ -136,6 +144,19 @@
 			<span class="copyright"><i class="fal fa-copyright"></i> Reuben Taveras</span>
 		</footer>
 	</div>
+
+	<script>
+		var menu = document.querySelector('.nav-links');
+		var hamburger = document.querySelector('.mobile-links i');
+		hamburger.onclick = function() {
+			if(menu.className === 'nav-links') {
+				menu.className += ' responsive';
+			} else {
+				menu.className = 'nav-links';
+			}
+		}
+	</script>
+
 </body>
 
 
