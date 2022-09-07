@@ -6,7 +6,7 @@
 @media screen and (max-width: 845px) {
 	.container {
 		width: 100%;
-		overflow: hidden;
+		/*overflow: hidden;*/
 	}
 
 	/* --------- NAV ----------- */
