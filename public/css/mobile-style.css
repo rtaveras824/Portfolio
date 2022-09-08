@@ -16,7 +16,10 @@
 
 	.mobile-links {
 		display: inline-block;
-		position: relative; /* To display menu on top */
+		position: fixed; /* To display menu on top */
+		top: 40px;
+		right: 0;
+		z-index: 20;
 	}
 
 	.mobile-links i {
@@ -34,32 +37,40 @@
 		margin-top: 5px;
 		display: block;
 		background-color: var(--darkblue);
-		transform: translate(100%, 0);
+		/*transform: translate(100%, 0);*/
+		visibility: hidden;
+		top: 0;
+		right: -200px;
 	}
 
 	#mobile-link-one {
-		transition-property: transform;
-		transition-duration: 0.5s;
+		/*transition-property: right;*/
+		/*transition-duration: 0.5s;*/
+		transition: 0.5s;
 		transition-timing-function: ease-out;
 	}
 
 	#mobile-link-two {
-		transition-property: transform;
-		transition-duration: 0.5s;
+		/*transition-property: right;*/
+		/*transition-duration: 0.5s;*/
+		transition: 0.5s;
 		transition-delay: 0.15s;
 		transition-timing-function: ease-out;
 	}
 
 	#mobile-link-three {
-		transition-property: transform;
-		transition-duration: 0.5s;
+		/*transition-property: right;*/
+		/*transition-duration: 0.5s;*/
+		transition: 0.5s;
 		transition-delay: 0.3s;
 		transition-timing-function: ease-out;
 	}
 
 	.responsive {
 		/*display: inline-block;*/
-		transform: translate(0);
+		/*transform: translate(0);*/
+		visibility: visible;
+		right: 0;
 	}
 
 	/* --------- MAIN PAGE ---------- */
@@ -71,6 +82,10 @@
 
 	#main h1 {
 		font-size: 15vw;
+	}
+
+	.project a {
+		width: 50%;
 	}
 }
 
