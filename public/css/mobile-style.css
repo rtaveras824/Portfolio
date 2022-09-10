@@ -2,10 +2,44 @@
 /* ------------- RESPONSIVE MOBILE ---------------- */
 /* ------------------------------------------------ */
 
-/* Tablets */
-@media screen and (max-width: 845px) {
+
+@media screen and (max-width: 1200px) {
+
 	.container {
 		width: 100%;
+	}
+
+	/* ------ ABOUT PAGE ------- */
+/*
+	#about {
+		height: 50vw;
+		min-height: 600px;
+	}
+
+	#about img {
+		margin-left: 0;
+	}
+
+	.about-back-block {
+		padding: 30px 0 0 100px;
+	}
+
+	.about-back-block h3 {
+		font-size: 35px;
+		margin: 0 0 -12px 0;
+	}*/
+
+	/* ------- PROJECT PAGE -------- */
+
+	.project a {
+		width: 50%;
+	}
+}
+
+/* Tablets */
+@media screen and (max-width: 870px) {
+	.container {
+		
 		/*overflow: hidden;*/
 	}
 
@@ -85,14 +119,74 @@
 	}
 
 	.project a {
-		width: 50%;
+		width: 40%;
+	}
+
+	/* --------- ABOUT PAGE -------- */
+
+	#about {
+		height: auto;
+	}
+
+	#about img {
+		float: none;
+		margin: 0;
+		height: auto;
+	}
+
+	#tall {
+		display: none;
+	}
+
+	#square {
+		display: block;
+	}
+
+	.right-block {
+		width: 100%;
+	}
+
+	.about-back-block {
+		/*position: static;*/
+		/*margin-left: 0;*/
+	}
+
+	.about-back-block h3 {
+		/*font-size: 20px;*/
+	}
+
+	.quote {
+		/*position: static;*/
+		/*padding: 100px;*/
+		margin: 300px 15% 80px 15%;
+	}
+
+	.quote p {
+		font-size: 40px;
+	}
+
+	/* --------- CONTACT PAGE -------- */
+
+	.form-input input, .form-input textarea, .submit-btn {
+		width: 60%;
 	}
 }
 
+
+
+
+
 /* Mobile Phones */
-@media screen and (max-width: 480px) {
+
+@media only screen and (max-device-width: 870px) {
+	#square {
+		/*width: 50%;*/
+	}
+}
+
+@media screen and (max-width: 750px) {
 	.container {
-		width: 100%;
+		/*width: 100%;*/
 	}
 
 	/* --------- MAIN PAGE ---------- */
@@ -100,4 +194,86 @@
 	#main h1 {
 		font-size: 20vw;
 	}
+
+	/* --------- ABOUT PAGE --------- */
+
+	.left-block {
+		display: none;
+	}
+
+	/* --------- PROJECTS PAGE --------- */
+
+	.project a {
+		display: block;
+		width: 100%;
+		float: none;
+	}
+
+	.project-content {
+		/*width: 100%;*/
+		padding: 30px;
+		height: auto;
+	}
+
+	/* -------- SOCIAL SECTION ------- */
+
+	.social {
+		height: auto;
+	}
+
+	.social i {
+		font-size: 10vw;
+	}
+
+	.circle {
+		width: 20vw;
+		height: 20vw;
+	}
+
+	/* --------- CONTACT PAGE -------- */
+
+	.form-input input, .form-input textarea, .submit-btn {
+		width: 70%;
+	}
+
+	/* ---------- FOOTER ------------- */
+
+	footer {
+		display: block;
+	}
+
+	.bottom-links {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.copyright {
+		display: block;
+		margin-top: 40px;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
