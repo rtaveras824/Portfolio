@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 300px;
+  height: 1000px;
+  background-color: coral;
+  position: relative;
+  touch-action: none;
+  margin: 0 auto;
+}
+
+.content {
+  width: 150px;
+  user-select: none;
+}
+
+.draggable {
+  position: relative;
+  width: 200px;
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*   z-index: 1; */
+  user-select: none;
+  margin: 0 auto;
+}
+
+.draggable-container {
+  margin-bottom: 20px;
+}
+
+.draggable-container:last-of-type {
+  margin-bottom: 0;
+}
+
+.drag-button {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
