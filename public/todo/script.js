@@ -158,7 +158,7 @@ const Container = () => {
 
   const handleMouseUp = (e) => {
     let clientY = e.type == "mouseup" ? e.clientY : e.changedTouches[0].clientY;
-    let clientX = e.type == "mouseup" ? e.clientX : e.touches[0].clientX;
+    let clientX = e.type == "mouseup" ? e.clientX : e.changedTouches[0].clientX;
     setActive(false);
     const newArray = draggables.map((obj) => obj);
     newArray[positionRef.current].zIndex = 1;
