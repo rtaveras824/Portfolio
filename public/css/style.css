@@ -287,6 +287,7 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	display: none; /* Remove when added */
 }
 
 #link-img-three {
@@ -294,6 +295,7 @@ nav {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	display: none; /* Remove when added */
 }
 
 .back-color {
@@ -402,7 +404,7 @@ nav {
 }
 
 .form-input input, .form-input textarea, .submit-btn {
-	font-family: 'Bebas Neue', sans-serif;
+	font-family: 'Roboto Slab', serif;
 	font-size: 2em;
 	color: black;
 	width: 50%;
@@ -432,6 +434,7 @@ nav {
 }
 
 .submit-btn {
+	font-family: 'Bebas Neue', sans-serif;
 	color: white;
 	background-color: var(--darkblue);
 	border: 2px solid var(--lightwhite);
@@ -447,6 +450,11 @@ nav {
 
 .submit-btn:active {
 	background-color: var(--red);
+}
+
+.confirmation {
+	margin: 20px;
+	font-size: 30px;
 }
 
 /* ------------------ FOOTER ---------------------- */

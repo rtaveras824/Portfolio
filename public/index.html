@@ -56,14 +56,7 @@
 					</div>
 					<div class="right-block">
 						<span class="about-back-block"><h3>About</h3></span>
-						<blockquote class="quote"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></blockquote>
+						<blockquote class="quote"><p>Now that I'm done with school I'm ready to take my next step in life. I would describe myself as hard-working, eager to learn, and easy going. I'm a team player when at work or in school and I get along with others. In school I never turned an assignment late, usually turning them in before they were due. I was a quick learner and never had trouble grasping a concept. At work I am always willing to help others. I follow the training that was given to me to complete my tasks as efficiently as possible."</p></blockquote>
 					</div>
 					<img id="square" class="headshot" src="images/headshot-square-europe.jpg" />
 				</div>
@@ -95,35 +88,29 @@
 					<div id="project-two" class="project">
 						<a id="link-img-two" href="#"><div class="overlay"></div></a>
 						<div class="project-content">
-							<h4 class="project-title">Coming Soon - Vegan Food Blog</h4>
-							<p class="project-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<h4 class="project-title">Coming Soon - Notecards</h4>
+							<p class="project-description">The focus of this project was to build a backend system that uses nodeJS and mongoDB as the database to allow a user to build their own personal notecards set. Currently in progress of building.</p>
 							<div class="frameworks">
 								<i class="fab fa-html5"></i>
 								<i class="fab fa-js-square"></i>
 								<i class="fab fa-node"></i>
 								<i class="far fa-database"></i>
-								<i class="fab fa-react"></i>
+								<!-- <i class="fab fa-react"></i> -->
+								<!-- <i class="fab fa-aws"></i> -->
 							</div>
 						</div>
 					</div>
 					<div id="project-three" class="project">
 						<a id="link-img-three" href="#"><div class="overlay"></div></a>
 						<div class="project-content">
-							<h4 class="project-title">Coming Soon - Notecards</h4>
-							<p class="project-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<h4 class="project-title">Coming Soon - Vegan Food Blog</h4>
+							<p class="project-description">Not started yet.</p>
 							<div class="frameworks">
 								<i class="fab fa-html5"></i>
 								<i class="fab fa-js-square"></i>
 								<i class="fab fa-node"></i>
 								<i class="far fa-database"></i>
 								<i class="fab fa-react"></i>
-								<i class="fab fa-aws"></i>
 							</div>
 						</div>
 					</div>
@@ -133,19 +120,20 @@
 		</div>
 		<div id="contact">
 			<h3>Contact</h3>
-			<form>
+			<form class="contact-form">
 				<div class="form-input">
-					<input id="name" type="text" placeholder="Name" />
+					<input id="name" type="text" placeholder="Name" name="name" required/>
 				</div>
 				<div class="form-input">
-					<input id="name" type="text" placeholder="Email" />
+					<input id="email" type="email" placeholder="Email" name="email" required/>
 				</div>
 				<div class="form-input">
-					<textarea id="message" placeholder="Message..."></textarea>
+					<textarea id="message" placeholder="Message..." name="message" required></textarea>
 				</div>
 				<div class="form-input">
 					<button class="submit-btn">SUBMIT</button>
 				</div>
+				<p class="confirmation"></p>
 			</form>
 		</div>
 		<footer>
@@ -160,8 +148,13 @@
 	</div>
 
 	<script>
-		var menu = document.querySelectorAll('.link-mobile');
-		var hamburger = document.querySelector('.mobile-links i');
+		const menu = document.querySelectorAll('.link-mobile');
+		const hamburger = document.querySelector('.mobile-links i');
+		const name = document.getElementById('name');
+		const email = document.getElementById('email');
+		const message = document.getElementById('message');
+		const confirmation = document.querySelector('.confirmation');
+
 		hamburger.onclick = function() {
 			menu.forEach((element) => {
 				if(element.className === 'menu link-mobile') {
@@ -179,6 +172,30 @@
 				});
 			}
 		})
+
+		const contact = document.querySelector('.contact-form');
+		contact.addEventListener('submit', e => {
+			e.preventDefault();
+			
+			confirmation.innerHTML = 'Sending email.';
+			const formData = new FormData(contact);
+			sendMail(formData);
+		});
+
+		const sendMail = (mail) => {
+			fetch('/send', {
+				method: 'post',
+				body: mail
+			}).then((response) => {
+				name.value = '';
+				email.value = '';
+				message.value = '';
+				return response.json();
+			}).then((data) => {
+				console.log(data);
+				confirmation.innerHTML = data.message;
+			});
+		}
 	</script>
 
 </body>
