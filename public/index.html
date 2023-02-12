@@ -27,7 +27,7 @@
 					<div class="links">
 						<span class="selector"><a class="menu" href="#about">About</a></span>
 						<span class="selector"><a class="menu" href="#projects">Projects</a></span>
-						<span class="selector"><a class="menu" href="#algorithms">Algorithm Solutions</a></span>
+						<span class="selector"><a class="menu" href="#algorithms">Algorithms</a></span>
 						<span class="selector"><a class="menu" href="#contact">Contact</a></span>
 					</div>
 					<div class="mobile-links">
@@ -35,13 +35,14 @@
 						<div class="menu-window">
 							<a id="mobile-link-one" class="menu link-mobile" href="#about">About</a>
 							<a id="mobile-link-two" class="menu link-mobile" href="#projects">Projects</a>
-							<a id="mobile-link-three" class="menu link-mobile" href="#algorithms">Algorithm</a>
+							<a id="mobile-link-three" class="menu link-mobile" href="#algorithms">Algorithms</a>
 							<a id="mobile-link-four" class="menu link-mobile" href="#contact">Contact</a>
 						</div>
 					</div>
 				</nav>
 			</header>
 			<main>
+
 				<div id="main">
 					<!-- <i class="fas fa-barcode"></i> -->
 					<h1>Reuben<br>Taveras</h1>
@@ -52,6 +53,7 @@
 						<li>Artist</li>
 					</ul>
 				</div>
+
 				<div id="about">
 					<div class="left-block">
 						<img id="tall" class="headshot" width="600px" height="900px" src="images/headshot-europe.jpg" />
@@ -62,11 +64,13 @@
 					</div>
 					<img id="square" class="headshot" src="images/headshot-square-europe.jpg" />
 				</div>
+
 				<div class="social">
 					<a href="https://www.instagram.com/reuben_taveras" target="_blank"><div class="circle"><i class="fab fa-instagram"></i></div></a>
 					<a href="https://github.com/rtaveras824" target="_blank"><div class="circle"><i class="fab fa-github"></i></div></a>
 					<a href="https://www.linkedin.com/in/reuben-taveras" target="_blank"><div class="circle"><i class="fab fa-linkedin"></i></div></a>
 				</div>
+
 				<div id="projects" class="projects-page">
 					<h3>PROJECTS</h3>
 					<div id="project-one" class="project">
@@ -115,6 +119,32 @@
 								<i class="fab fa-react"></i>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div id="algorithms" class="algorithms-page">
+					<h3>Algorithms</h3>
+					<div class="algorithm-section">
+						<p class="algorithm-description">Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+
+Examples
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true</p>
+						<code>
+function validParentheses(parens) {
+  if (parens[0] == ')' || parens[parens.length - 1] == '(' || parens.length % 2 !== 0) {
+    return false;
+  } else {
+    if (parens.length > 0) {
+      return validParentheses(parens.replace(/\(\)/g, ""));
+    } else {
+      return true;
+    }
+  }
+}
+</code>
 					</div>
 				</div>
 				
