@@ -291,10 +291,6 @@ nav {
 	background-size: contain;
 }
 
-.link-img {
-	
-}
-
 #link-img-three {
 	background: url('../images/989.jpeg');
 	background-repeat: no-repeat;
@@ -303,9 +299,17 @@ nav {
 	display: none; /* Remove when added */
 }
 
+#link-img-four {
+	display: none;
+}
+
 .back-color {
 	background-color: white;
 	flex: 2;
+}
+
+.back-color:hover {
+	background-color: lightblue;
 }
 
 .back-color a {
@@ -390,7 +394,7 @@ nav {
 /* ------------ ALGORITHM PAGE -------------------- */
 
 #algorithms {
-	padding: 50px 10px;
+	padding: 50px 20px;
 }
 
 .algorithm-section {
@@ -421,6 +425,7 @@ code {
 	border-radius: 20px;
 	box-shadow: inset 0 0 10px black;
 	margin: 30px 0;
+	padding: 10px;
 }
 
 /* ------------ CONTACT PAGE ---------------------- */
