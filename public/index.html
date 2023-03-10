@@ -32,7 +32,7 @@
 					</div>
 					<div class="mobile-links">
 						<div><i class="fas fa-bars"></i></div>
-						<div class="menu-window">
+						<div class="menu-window no-display">
 							<a id="mobile-link-one" class="menu link-mobile" href="#about">About</a>
 							<a id="mobile-link-two" class="menu link-mobile" href="#projects">Projects</a>
 							<a id="mobile-link-three" class="menu link-mobile" href="#algorithms">Algorithms</a>
@@ -75,7 +75,7 @@
 					<h3>PROJECTS</h3>
 					<div id="project-one" class="project">
 						<div class="back-color">
-							<a id="link-img-one" href="https://codepen.io/rtaveras824/pen/jOxwjqB" target="_blank">
+							<a id="link-img-one" class="link-img" href="https://codepen.io/rtaveras824/pen/jOxwjqB" target="_blank">
 								<div class="icon-link">
 									<i class="codepen-icon fab fa-codepen"></i>
 								</div>
@@ -92,7 +92,25 @@
 						</div>
 					</div>
 					<div id="project-two" class="project">
-						<a id="link-img-two" href="#"><div class="overlay"></div></a>
+						<div class="back-color">
+							<a id="link-img-two" class="link-img" href="https://codepen.io/rtaveras824/pen/XWPaBPo" target="_blank">
+								<div class="icon-link">
+									<i class="codepen-icon fab fa-codepen"></i>
+								</div>
+							</a>
+						</div>
+						<div class="project-content">
+							<h4 class="project-title">React Calculator</h4>
+							<p class="project-description">This React calculator uses if-else conditionals to solve its complex logic. The calculator allows for basic operations, where double negatives are also solved. The last operator selected is the one used, unless negative is selected. Repeat zeros are eliminated, and logic is included for decimal places. There is a max limit of 20 numbers per operand and a message is provided when that limit is reached. The equation display sizes automatically for long equations.</p>
+							<div class="frameworks">
+								<i class="fab fa-html5"></i>
+								<i class="fab fa-js-square"></i>
+								<i class="fab fa-react"></i>
+							</div>
+						</div>
+					</div>
+					<div id="project-three" class="project">
+						<a id="link-img-three" href="#"><div class="overlay"></div></a>
 						<div class="project-content">
 							<h4 class="project-title">Coming Soon - Notecards</h4>
 							<p class="project-description">The focus of this project was to build a backend system that uses nodeJS and mongoDB as the database to allow a user to build their own personal notecards set. Currently in progress of building.</p>
@@ -106,8 +124,8 @@
 							</div>
 						</div>
 					</div>
-					<div id="project-three" class="project">
-						<a id="link-img-three" href="#"><div class="overlay"></div></a>
+					<div id="project-four" class="project">
+						<a id="link-img-four" href="#"><div class="overlay"></div></a>
 						<div class="project-content">
 							<h4 class="project-title">Coming Soon - Vegan Food Blog</h4>
 							<p class="project-description">Not started yet.</p>
@@ -180,17 +198,38 @@ function validParentheses(parens) {
 	</div>
 
 	<script>
+		let openMenu = false;
+		const menuWindow = document.querySelector('.menu-window');
 		const menu = document.querySelectorAll('.link-mobile');
 		const hamburger = document.querySelector('.mobile-links i');
 		const name = document.getElementById('name');
 		const email = document.getElementById('email');
 		const message = document.getElementById('message');
 		const confirmation = document.querySelector('.confirmation');
+		let hideMenuTimeout;
+		let addResponsiveAnimationToMenuTimeout;
 
 		hamburger.onclick = function() {
+			clearTimeout(hideMenuTimeout);
+			clearTimeout(addResponsiveAnimationToMenuTimeout);
+
+			openMenu = !openMenu;
+			console.log(openMenu);
+			if (openMenu) {
+				menuWindow.className = 'menu-window';
+			} else {
+
+				hideMenuTimeout = setTimeout(() => {
+					menuWindow.className += ' no-display';
+				}, 1000);
+			}
+
 			menu.forEach((element) => {
-				if(element.className === 'menu link-mobile') {
-					element.className += ' responsive';
+				if(openMenu) {
+					addResponsiveAnimationToMenuTimeout = setTimeout(() => {
+						element.className += ' responsive';
+					}, 100);
+					// element.className += ' responsive';
 				} else {
 					element.className = 'menu link-mobile';
 				}
@@ -199,6 +238,7 @@ function validParentheses(parens) {
 
 		menu.forEach((element) => {
 			element.onclick = () => {
+				openMenu = !openMenu;
 				menu.forEach((link) => {
 					link.className = 'menu link-mobile';
 				});

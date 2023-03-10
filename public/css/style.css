@@ -275,6 +275,8 @@ nav {
 	opacity: 0.5;
 }*/
 
+
+
 #link-img-one {
 	background: url('../images/react-todo.png');
 	background-repeat: no-repeat;
@@ -283,11 +285,14 @@ nav {
 }
 
 #link-img-two {
-	background: url('../images/259.jpeg');
+	background: url('../images/react-calculator.png');
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
-	display: none; /* Remove when added */
+	background-size: contain;
+}
+
+.link-img {
+	
 }
 
 #link-img-three {

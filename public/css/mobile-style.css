@@ -66,6 +66,10 @@
 		margin-top: 10px;
 	}
 
+	.no-display {
+		display: none;
+	}
+
 	.link-mobile {
 		padding: 10px 10px 10px 40px;
 		margin-top: 5px;
