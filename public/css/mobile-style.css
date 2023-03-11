@@ -37,7 +37,7 @@
 }
 
 /* Tablets */
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 915px) {
 	.container {
 		
 		/*overflow: hidden;*/
@@ -224,6 +224,10 @@
 		display: none;
 	}
 
+	.quote p {
+		font-size: 25px;
+	}
+
 	/* --------- PROJECTS PAGE --------- */
 
 	.project {
@@ -241,6 +245,12 @@
 		/*width: 100%;*/
 		padding: 30px;
 		height: auto;
+	}
+
+	/* -------- ALGORITHMS SECTION --------- */
+
+	#algorithms h3 {
+		font-size: 4em;
 	}
 
 	/* -------- SOCIAL SECTION ------- */
